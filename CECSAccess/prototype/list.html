@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CECSAccess | My Requests</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+
+    <!-- side part -->
+    <aside>
+        <div class="brand">
+            <div class="logo">CA</div>
+            <div>
+                <b>CECSAccess</b>
+                <small>College Equipment Access and Service Management System</small>
+            </div>
+        </div>
+
+        <small class="ws">STUDENT WORKSPACE</small>
+
+        <nav>
+            <a href="list.html" class="navbtn on">Equipment Requests</a>
+            <a href="form.html" class="navbtn">Add Request</a>
+        </nav>
+
+        <div class="cec">
+            <div class="logo gold">CEC</div>
+            <div>
+                <b>CEC</b>
+                <small>College of Engineering and Computational Sciences</small>
+            </div>
+        </div>
+    </aside>
+
+    <!-- main page -->
+    <main>
+
+        <header>
+            <div class="who">
+                <div class="avatar"></div>
+                <div>
+                    <b>Princess Karyll Chavez</b>
+                    <small>Student</small>
+                </div>
+            </div>
+
+            <a href="list.html" class="link">Log out</a>
+        </header>
+
+        <section class="page-title">
+            <h2>My Requests</h2>
+        </section>
+
+        <!-- Filters -->
+        <form class="filter-bar" onsubmit="return false">
+            <label for="search">
+                Search
+                <input type="search" id="search" name="search"
+                       placeholder="Search purpose or category">
+            </label>
+
+            <label for="statusFilter">
+                Status
+                <select id="statusFilter" name="status">
+                    <option value="">All statuses</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+            </label>
+
+            <label for="dateFilter">
+                Date
+                <input type="date" id="dateFilter" name="date" aria-label="Filter by date">
+            </label>
+
+            <a href="form.html" class="primary add-btn">+ New request</a>
+        </form>
+
+        <!-- Table -->
+        <div class="table-box">
+            <table id="requestTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Purpose</th>
+                        <th>Schedule</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr data-date="2026-11-10">
+                        <td>1</td>
+                        <td>Projector</td>
+                        <td>Use a projector for an academic presentation.</td>
+                        <td class="schedule">Nov 10, 2026<small>9:00 AM – 11:00 AM</small></td>
+                        <td><span class="b approved">Approved</span></td>
+                        <td class="action-cell">
+                            <a href="form.html" class="sm">View</a>
+                        </td>
+                    </tr>
+
+                    <tr data-date="2026-11-10">
+                        <td>2</td>
+                        <td>Networking Equipment</td>
+                        <td>Practice router configuration for networking class.</td>
+                        <td class="schedule">Nov 10, 2026<small>1:00 PM – 4:00 PM</small></td>
+                        <td><span class="b approved">Approved</span></td>
+                        <td class="action-cell">
+                            <a href="form.html" class="sm">View</a>
+                        </td>
+                    </tr>
+
+                    <tr data-date="2026-11-11">
+                        <td>3</td>
+                        <td>Computer</td>
+                        <td>Request a computer for programming activities.</td>
+                        <td class="schedule">Nov 11, 2026<small>10:00 AM – 12:00 PM</small></td>
+                        <td><span class="b pending">Pending</span></td>
+                        <td class="action-cell">
+                            <a href="form.html" class="sm">Edit</a>
+                            <button type="button" class="sm no">Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr data-date="2026-11-12">
+                        <td>4</td>
+                        <td>Projector</td>
+                        <td>Borrow a projector for a classroom report.</td>
+                        <td class="schedule">Nov 12, 2026<small>2:00 PM – 3:30 PM</small></td>
+                        <td><span class="b pending">Pending</span></td>
+                        <td class="action-cell">
+                            <a href="form.html" class="sm">Edit</a>
+                            <button type="button" class="sm no">Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr data-date="2026-11-13">
+                        <td>5</td>
+                        <td>Networking Equipment</td>
+                        <td>Use networking equipment for laboratory practice.</td>
+                        <td class="schedule">Nov 13, 2026<small>8:00 AM – 10:00 AM</small></td>
+                        <td><span class="b rejected">Rejected</span></td>
+                        <td class="action-cell">
+                            <a href="form.html" class="sm">view</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+    </main>
+</div>
+</body>
+</html>

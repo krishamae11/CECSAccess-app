@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CECSAccess | New Request</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+
+    <!-- side part -->
+    <aside>
+        <div class="brand">
+            <div class="logo">CA</div>
+            <div>
+                <b>CECSAccess</b>
+                <small>College Equipment Access and Service Management System</small>
+            </div>
+        </div>
+
+        <small class="ws">STUDENT WORKSPACE</small>
+
+        <nav>
+            <a href="list.html" class="navbtn">Equipment Requests</a>
+            <a href="form.html" class="navbtn on">Add Request</a>
+        </nav>
+
+        <div class="cec">
+            <div class="logo gold">CEC</div>
+            <div>
+                <b>CEC</b>
+                <small>College of Engineering and Computational Sciences</small>
+            </div>
+        </div>
+    </aside>
+
+    <!-- main page -->
+    <main>
+
+        <header>
+            <div class="who">
+                <div class="avatar"></div>
+                <div>
+                    <b>Princess Karyll Chavez</b>
+                    <small>Student</small>
+                </div>
+            </div>
+
+            <a href="list.html" class="link">Log out</a>
+        </header>
+
+        <section class="page-title">
+            <h2 id="formTitle">New Request</h2>
+        </section>
+
+        <div class="form-layout">
+
+            <!-- Form card -->
+            <form action="#" method="post" class="form-card" id="requestForm" novalidate>
+
+                <div class="field">
+                    <label for="Category_ID">
+                        <span>Equipment category <span class="req">*</span></span>
+                        <select id="Category_ID" name="Category_ID" required>
+                            <option value="">Select a category</option>
+                            <option value="1" data-training="">Computer</option>
+                            <option value="2" data-training="">Projector</option>
+                            <option value="3" data-training="Networking Fundamentals Certification (valid)">Networking Equipment</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="hint" id="trainingHint" hidden></div>
+
+                <div class="field">
+                    <label for="Purpose">
+                        <span>Purpose <span class="req">*</span></span>
+                        <textarea id="Purpose" name="Purpose" maxlength="255" rows="4"
+                                  placeholder="What will you use it for?" required></textarea>
+                    </label>
+                </div>
+
+                <div class="field">
+                    <label for="Request_Date">
+                        <span>Date needed <span class="req">*</span></span>
+                        <input type="date" id="Request_Date" name="Request_Date" required>
+                    </label>
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        <label for="Requested_Start">
+                            <span>Start time <span class="req">*</span></span>
+                            <input type="time" id="Requested_Start" name="Requested_Start" required>
+                        </label>
+                    </div>
+
+                    <div class="field" id="endField">
+                        <label for="Requested_End">
+                            <span>End time <span class="req">*</span></span>
+                            <input type="time" id="Requested_End" name="Requested_End" required>
+                        </label>
+                        <div class="field-error" id="endError" role="alert">
+                            ! End time must be after start time.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary">Save request</button>
+                    <a href="list.html" class="ghost">Cancel</a>
+                </div>
+
+            </form>
+
+            <!-- Right info column -->
+            <div class="side-info">
+
+                <section class="info-box">
+                    <h3>Filled automatically</h3>
+                    <dl>
+                        <div>
+                            <dt>Student</dt>
+                            <dd>Princess Karyll Chavez</dd>
+                        </div>
+                        <div>
+                            <dt>Status</dt>
+                            <dd>Pending</dd>
+                        </div>
+                        <div>
+                            <dt>Submitted at</dt>
+                            <dd id="submittedAt">On save</dd>
+                        </div>
+                    </dl>
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+</div>
+</body>
+</html>
